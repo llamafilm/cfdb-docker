@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  db:
+    image         : mariadb:10.4.29
+    container_name: cf_mariadb
+    restart       : unless-stopped
+    ports:
+      - "3306:3306/tcp"
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "yes"
+    # healthcheck:
+    #   test: ["CMD-SHELL", "mysqladmin status"]
+
+  web:
+    build          : .
+    container_name: cf_apache
+    restart       : unless-stopped
+    ports:
+      - "80:80"
+    # healthcheck:
+    #   test: ["CMD-SHELL", "curl -s http://localhost/v9/rest/readiness"]
+    environment:
+      UPLOAD_LIMIT: 256M
