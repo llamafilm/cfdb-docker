@@ -12,6 +12,5 @@ ADD https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-english.tar.g
 RUN tar xzf /phpMyAdmin-5.2.1-english.tar.gz; \
     mv /phpMyAdmin-5.2.1-english /var/www/html/phpMyAdmin; \
     mkdir --mode=700 /var/www/html/phpMyAdmin/tmp;
-COPY root /
-ADD v9.tar.gz /var/www/html
-RUN chown -R www-data:www-data /var/www/html
+COPY --chown=www-data:www-data root /
+ADD --chown=www-data:www-data v9.tar.gz /var/www/html
