@@ -12,6 +12,7 @@ RUN docker-php-ext-install mysqli \
     pdo_mysql
 RUN a2enmod rewrite headers
 COPY --chown=www-data:www-data root /
-ADD --chown=www-data:www-data v9.tar.gz /var/www/html
+ADD --chown=www-data:www-data V9_2022_Up2/ /var/www/html
+ADD --chown=www-data:www-data cf-web-ui /var/www/html/cf-web-ui
 ADD https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-english.tar.gz /
 RUN tar xzf /phpMyAdmin-5.2.1-english.tar.gz -C /var/www/html/phpMyAdmin --strip-components=1
