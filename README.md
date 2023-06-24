@@ -7,6 +7,6 @@ The Dockerfile builds an image with PHP, Apache, phpMyAdmin, and some configurat
 
 Briefly tested with TKD 2022.  Older versions may require extra modules.
 
-Obtain the v9 and cf-web-ui packages from Colorfront
-https://dl.colorfront.cloud/official/Others/V9_2022_update2.zip
-https://dl.colorfront.cloud/official/Others/cf-web-ui_onprem_v1.8.1.zip
+Obtain the v9 and cf-web-ui packages from Colorfront (requires login):
+- https://dl.colorfront.cloud/official/Others/V9_2022_update2.zip
+- https://dl.colorfront.cloud/official/Others/cf-web-ui_onprem_v1.8.1.zip
